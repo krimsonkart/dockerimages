@@ -1,10 +1,5 @@
 FROM circleci/node:jessie-browsers
 
-RUN wget https://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip
-RUN unzip chromedriver_linux64.zip
-RUN sudo mv chromedriver /usr/bin/chromedriver
-RUN curl https://intoli.com/install-google-chrome.sh | bash
-RUN mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
 
 ARG CHROME_VERSION="google-chrome-stable"
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
